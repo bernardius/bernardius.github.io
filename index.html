@@ -1,4 +1,28 @@
 <!DOCTYPE html>
 <head></head>
-<body>hello world</body>
+<body>hello world
+
+
+    <script type="text/javascript">
+          var _gorilla = _gorilla || {};
+          _gorilla.account_id = 'b1b4630b0948c338d05b661502602003';
+          _gorilla.loaded = false;
+          _gorilla.chatbot = false;
+          var _gorillaInitPortal = function () {
+              _gorilla.loaded = true;
+              var a = document.createElement('script');
+              a.type = 'text/javascript';
+              a.async = !0;
+              a.defer = !0;
+              a.src = 'https://app.gorilladesk.com/js/portal/portal.js';
+              var b = document.getElementsByTagName('script')[0];
+              b.parentNode.insertBefore(a, b);
+          };
+          window.addEventListener
+              ? window.addEventListener('load', _gorillaInitPortal, !1)
+              : window.attachEvent
+              ? window.attachEvent('onload', _gorillaInitPortal)
+              : (window.onload = _gorillaInitPortal);
+    </script>
+</body>
 </html>

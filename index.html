@@ -1,6 +1,22 @@
 <!DOCTYPE html>
-<head></head>
-<body>hello world
+<head>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        body #gorilladesk-portal-widget-main,body #gorilladesk-portal-widget-menu, body #gorilladesk-portal-widget-ai {
+            position: relative;
+            right: 0px;
+            left: calc(-200px + 50vw);
+            bottom: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Smart Pest Defense</h1>
 
 
     <script type="text/javascript">
@@ -23,6 +39,19 @@
               : window.attachEvent
               ? window.attachEvent('onload', _gorillaInitPortal)
               : (window.onload = _gorillaInitPortal);
+
+            
+
+            function openMenu() {
+                window.setTimeout(() => {
+                    console.log('firing?');
+                    let $widget = document.getElementById('gorilladesk-portal-widget');
+                    $widget.classList.add('open-gorilla-widget-menu');
+                }, 2000);
+            }
+
+            window.addEventListener('load', openMenu);
+
     </script>
 </body>
 </html>

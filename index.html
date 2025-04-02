@@ -2,53 +2,69 @@
 <head>
 
     <style>
-        /* h1 {
+        h1 {
             text-align: center;
+            font-size: 28px;
         }
 
-        body #gorilladesk-portal-widget-main,body #gorilladesk-portal-widget-menu, body #gorilladesk-portal-widget-ai {
-            position: relative;
-            right: 0px;
-            left: calc(-200px + 50vw);
-            bottom: 0px;
-        } */
+        @media screen and (min-width: 900px) {
+            body #gorilladesk-portal-widget-main,body #gorilladesk-portal-widget-menu, body #gorilladesk-portal-widget-ai {
+                position: relative;
+                right: 0px;
+                left: calc(-200px + 50vw);
+                bottom: 0px;
+            }
+        }
+        
+        @media only screen and (max-width: 500px) {
+           body #gorilladesk-portal-widget-main, body #gorilladesk-portal-widget-menu, body #gorilladesk-portal-widget-ai {
+                margin-top: 60px;
+                height: calc(100% - 60px);
+            }
+        }    
     </style>
 </head>
 
 <body>
-    Test
-    <script type="text/javascript">
-          var _gorilla = _gorilla || {};
-          _gorilla.account_id = 'b1b4630b0948c338d05b661502602003';
-          _gorilla.loaded = false;
-          _gorilla.chatbot = false;
-          var _gorillaInitPortal = function () {
-              _gorilla.loaded = true;
-              var a = document.createElement('script');
-              a.type = 'text/javascript';
-              a.async = !0;
-              a.defer = !0;
-              a.src = 'https://app.gorilladesk.com/js/portal/portal.js';
-              var b = document.getElementsByTagName('script')[0];
-              b.parentNode.insertBefore(a, b);
-          };
-          window.addEventListener
-              ? window.addEventListener('load', _gorillaInitPortal, !1)
-              : window.attachEvent
-              ? window.attachEvent('onload', _gorillaInitPortal)
-              : (window.onload = _gorillaInitPortal);
+    <!-- <h1>Smart Pest Defense</h1> -->
 
-            
-
-            function openMenu() {
-                window.setTimeout(() => {
-                    let $widget = document.getElementById('gorilladesk-portal-widget');
-                    $widget.classList.add('open-gorilla-widget-menu');
-                }, 2000);
-            }
-
-            window.addEventListener('load', openMenu);
-
-    </script>
+        <script type="text/javascript">
+            var _gorilla = _gorilla || {};
+            _gorilla.account_id = 'b1b4630b0948c338d05b661502602003';
+            _gorilla.loaded = false;
+            _gorilla.chatbot = false;
+            var _gorillaInitPortal = function () {
+                _gorilla.loaded = true;
+                var a = document.createElement('script');
+                a.type = 'text/javascript';
+                a.async = !0;
+                a.defer = !0;
+                a.src = 'https://app.gorilladesk.com/js/portal/portal.js';
+                var b = document.getElementsByTagName('script')[0];
+                var c = document.getElementsByName('div')[0]
+                b.parentNode.insertBefore(a, null);
+            };
+            window.addEventListener
+                ? window.addEventListener('load', _gorillaInitPortal, !1)
+                : window.attachEvent
+                ? window.attachEvent('onload', _gorillaInitPortal)
+                : (window.onload = _gorillaInitPortal);
+  
+              function openMenu() {
+                  window.setTimeout(() => {
+                      let $widget = document.getElementById('gorilladesk-portal-widget');
+                      $widget.classList.add('open-gorilla-widget-menu');
+                      const newNode = document.createElement("h1");
+                        newNode.innerText = "Smart Pest Defense";
+                        document.body.insertAdjacentElement('afterbegin', newNode);
+                  }, 3000);
+  
+                  
+                  
+              }
+  
+              window.addEventListener('load', openMenu);
+      </script>
+    
 </body>
 </html>
